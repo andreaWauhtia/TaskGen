@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import dish from './assets/saveImg.jpg';
+import deba from './assets/debarasser.png';
 import fairelit from './assets/fairelit.jpg';
 import aspi from './assets/aspirateur.jpg';
 import dust from './assets/fairepoussiere.jpg';
@@ -22,10 +23,13 @@ import lingepropre from './assets/rangerlingepropre.jpg';
 import papiertoilette from './assets/papiertoilette.jpg';
 import chaussettes from './assets/chaussettes.jpg';
 import lavevaisselle from './assets/lavevaisselle.jpg';
-import cc from './assets/aiderepas.jpg';
+import cc from './assets/pendrelinge.jpg';
 import poubelle from './assets/viderpoubelle.jpg';
 import repas from './assets/aiderepas.jpg';
 import rangercourge from './assets/rangercourse.jpg';
+import tirer from './assets/tirerlachasse.jpg';
+import lampe from './assets/eteindrelampe.jpg';
+import chausson from './assets/mettrechaussons.jpg';
 import viteLogo from '/vite.svg'
 import './App.scss'
 
@@ -36,7 +40,7 @@ export interface CardContent{
 function App() {
   const images: CardContent[] = [
     {link: dish, title: 'Mettre la table'  },
-    {link: dish, title: 'Débarrasser la table'  },
+    {link: deba, title: 'Débarrasser la table'  },
     {link: fairelit, title: 'Retirer ses draps'  },
     {link: homework, title: 'Faire ses devoirs'  },
     {link: netChaussure, title: 'Nettoyer ses chaussures'  },
@@ -62,6 +66,10 @@ function App() {
     {link: poubelle, title: 'Descendre les poubelles'  },
     {link: repas, title: 'Aider pour le repas'  },
     {link: cc, title: 'Aider à pendre le linge'  },
+    {link: tirer, title: 'Tirer sa chasse'  },
+    {link: lampe, title: 'Éteindre la lumière'  },
+    {link: chausson, title: 'Mettre ses chaussons'  },
+
   ];
   const renderedImages: JSX.Element[] = [];
 

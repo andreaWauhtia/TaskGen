@@ -7,11 +7,18 @@
 .label{
   font-weight: 700 !important;
   word-break: break-word;
+  font-size: smaller;
+}
+.bord{
+  //border: 1px solid #000 !important;
+  //width: 160px  !important;
+  //height: 150px !important;
 }
 
 .image{
-  height: 120px;
-  width: 120px;
+  margin-top: 5px;
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
   border: 3px solid #0d115aaa;
   object-fit: contain;
