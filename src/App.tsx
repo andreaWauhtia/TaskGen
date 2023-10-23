@@ -33,62 +33,98 @@ import chausson from './assets/mettrechaussons.jpg';
 import viteLogo from '/vite.svg'
 import './App.scss'
 
-export interface CardContent{
+export interface CardContent {
   link: string;
   title: string;
 }
 function App() {
   const images: CardContent[] = [
-    {link: dish, title: 'Mettre la table'  },
-    {link: deba, title: 'Débarrasser la table'  },
-    {link: fairelit, title: 'Retirer ses draps'  },
-    {link: homework, title: 'Faire ses devoirs'  },
-    {link: netChaussure, title: 'Nettoyer ses chaussures'  },
-    {link: rmanteau, title: 'Ranger les manteaux'  },
-    {link: selaver, title: 'Se laver seule'  },
-    {link: voiture, title: 'Ranger la voiture'  },
-    {link: prepcollation, title: 'Préparer ses collations'  },
-    {link: vidercollation, title: 'Vider le sac de collation  '  },
-    {link: jouet, title: 'Ranger ses jouets'  },
-    {link: rangerchambre, title: 'Ranger sa chambre'  },
-    {link: dust, title: 'Faire les poussières'  },
-    {link: livre, title: 'Ramasser ses livres'  },
-    {link: lingesale, title: 'Mettre son linge dans le panier'  },
-    {link: rangercourge, title: 'Ranger les courses'  },
-    {link: chaussure, title: 'Ranger ses chaussures'  },
-    {link: habille, title: 's\'habiller'  },
-    {link: papiertoilette, title: 'Aller chercher du papier toilette'  },
-    {link: lingepropre, title: 'Ranger son linge propre'  },
-    {link: aspi, title: 'Passer l\'aspirateur'  },
-    {link: apple, title: 'Nourir Apple'  },
-    {link: chaussettes, title: 'Plier les chaussettes'  },
-    {link: lavevaisselle, title: 'Vider le lave vaisselle'  },
-    {link: poubelle, title: 'Descendre les poubelles'  },
-    {link: repas, title: 'Aider pour le repas'  },
-    {link: cc, title: 'Aider à pendre le linge'  },
-    {link: tirer, title: 'Tirer sa chasse'  },
-    {link: lampe, title: 'Éteindre la lumière'  },
-    {link: chausson, title: 'Mettre ses chaussons'  },
+    { link: dish, title: 'Mettre la table' },
+    { link: deba, title: 'Débarrasser la table' },
+    { link: fairelit, title: 'Retirer ses draps' },
+    { link: homework, title: 'Faire ses devoirs' },
+    { link: netChaussure, title: 'Nettoyer ses chaussures' },
+    { link: rmanteau, title: 'Ranger les manteaux' },
+    { link: selaver, title: 'Se laver seule' },
+    { link: voiture, title: 'Ranger la voiture' },
+    { link: prepcollation, title: 'Préparer ses collations' },
+    { link: vidercollation, title: 'Vider le sac de collation  ' },
+    { link: jouet, title: 'Ranger ses jouets' },
+    { link: rangerchambre, title: 'Ranger sa chambre' },
+    { link: dust, title: 'Faire les poussières' },
+    { link: livre, title: 'Ramasser ses livres' },
+    { link: lingesale, title: 'Mettre son linge dans le panier' },
+    { link: rangercourge, title: 'Ranger les courses' },
+    { link: chaussure, title: 'Ranger ses chaussures' },
+    { link: habille, title: 's\'habiller' },
+    { link: papiertoilette, title: 'Aller chercher du papier toilette' },
+    { link: lingepropre, title: 'Ranger son linge propre' },
+    { link: aspi, title: 'Passer l\'aspirateur' },
+    { link: apple, title: 'Nourir Apple' },
+    { link: chaussettes, title: 'Plier les chaussettes' },
+    { link: lavevaisselle, title: 'Vider le lave vaisselle' },
+    { link: poubelle, title: 'Descendre les poubelles' },
+    { link: repas, title: 'Aider pour le repas' },
+    { link: cc, title: 'Aider à pendre le linge' },
+    { link: tirer, title: 'Tirer sa chasse' },
+    { link: lampe, title: 'Éteindre la lumière' },
+    { link: chausson, title: 'Mettre ses chaussons' },
 
   ];
   const renderedImages: JSX.Element[] = [];
+  const renderedTitles: JSX.Element[] = [];
 
-  images.forEach((it, index) => {
-    if ((index+1 )%4 === 0){
-      renderedImages.push(<><br/><div className='row separator'></div><br/></>)
+  const rows = Math.ceil(images.length / 4);
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < 4; j++) {
+      const index = i * 4 + j;
+      const it = images[index];
+      if (it !== undefined) {
+        renderedImages.push(
+          <>
+            <div className={`col-3 justify-content-center bord`} key={index}>
+              <img className='image' src={it.link} alt={it.title} />
+            </div>
+          </>
+        );
+      }
+      else {
+        renderedImages.push(
+        <div className={`col-3 justify-content-center bord`} key={index}></div>
+        );
+      }
+      //<p className='label'>{it.title}</p>
     }
-    renderedImages.push(
-      <div className={`col-3 justify-content-center bord`} key={index}>
-        <img className='image' src={it.link} alt={it.title} />
-        <p className='label'>{it.title}</p>
-      </div>
-    );
-  });
+    for (let j = 3; j >= 0; j--) {
+      const index = i * 4 + j;
+      const it = images[index];
+      if (it !== undefined) {
+        renderedTitles.push(
+          <>
+            <div className={`col-3 justify-content-center bord`} key={index}>
+              <div className='col align-self-center'>
+                <p className='label image'>{it.title}</p>
+              </div>
+            </div>
+          </>
+        );
+      }
+      else {
+        renderedImages.push(
+        <div className={`col-3 justify-content-center bord`} key={index}></div>
+        );
+      }
+
+    }
+  }
   return (
     <div className='container'>
       <div className='col-11'>
-        <div className="row">
+        <div className="row pagebreak">
           {renderedImages}
+        </div>
+        <div className="row pagebreak">
+          {renderedTitles}
         </div>
       </div>
     </div>

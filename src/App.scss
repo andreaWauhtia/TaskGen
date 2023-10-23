@@ -6,8 +6,12 @@
 
 .label{
   font-weight: 700 !important;
-  word-break: break-word;
-  font-size: smaller;
+  word-break: keep-all;
+  font-size: 12px;
+  text-align: center;
+  padding: 11px;
+  left: 0;
+  bottom: 5px;
 }
 .bord{
   //border: 1px solid #000 !important;
@@ -41,6 +45,10 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+
+@media print{
+  .pagebreak {page-break-after: always;}
+  }
 
 @keyframes logo-spin {
   from {
