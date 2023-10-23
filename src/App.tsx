@@ -82,8 +82,10 @@ function App() {
       if (it !== undefined) {
         renderedImages.push(
           <>
-            <div className={`col-3 align-items-center bord`} key={index}>
-              <img className='image'  src={it.link} alt={it.title} />
+            <div className={`col-3 align-items-center bord d-flex justify-content-around`} key={index}>
+              <div className="image-container">
+                <img className='image' src={it.link} alt={it.title} />
+              </div>          
             </div>
           </>
         );
@@ -101,8 +103,10 @@ function App() {
       if (it !== undefined) {
         renderedTitles.push(
           <>
-            <div className={`col-3 align-items-center bord`} key={index} style={{height:'95px'}}>
-              <span className='label image'>{it.title}</span>
+            <div className={`col-3 align-items-center bord d-flex justify-content-around`} key={index} style={{height:'95px'}}>
+              <div className="title-container">
+                <span className='label'>{it.title}</span>
+              </div> 
             </div>
           </>
         );
@@ -117,14 +121,14 @@ function App() {
   }
   return (
     <>
-      <div className='container pagebreak' style={{ marginTop: '20px', marginLeft: '-5px' }}>
+      <div className='container pagebreak' style={{ marginTop: '20px' }}>
         <div className='col-11 '>
           <div className="row justify-content-center">
             {renderedImages}
           </div>
         </div>
       </div>
-      <div className='container pagebreak' style={{ marginTop: '25px' }}>
+      <div className='container pagebreak' style={{ marginTop: '20px' }}>
         <div className='col-11 '>
           <div className="row justify-content-center">
             {renderedTitles}
