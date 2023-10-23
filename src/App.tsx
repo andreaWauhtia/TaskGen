@@ -56,7 +56,7 @@ function App() {
     { link: lingesale, title: 'Mettre son linge dans le panier' },
     { link: rangercourge, title: 'Ranger les courses' },
     { link: chaussure, title: 'Ranger ses chaussures' },
-    { link: habille, title: 's\'habiller' },
+    { link: habille, title: 'S\'habiller' },
     { link: papiertoilette, title: 'Aller chercher du papier toilette' },
     { link: lingepropre, title: 'Ranger son linge propre' },
     { link: aspi, title: 'Passer l\'aspirateur' },
@@ -82,7 +82,7 @@ function App() {
       if (it !== undefined) {
         renderedImages.push(
           <>
-            <div className={`col-3 justify-content-center bord`} key={index}>
+            <div className={`col-3 justify-content-center bord`} key={index} style={{padding:5}}>
               <img className='image' src={it.link} alt={it.title} />
             </div>
           </>
@@ -101,10 +101,8 @@ function App() {
       if (it !== undefined) {
         renderedTitles.push(
           <>
-            <div className={`col-3 justify-content-center bord`} key={index}>
-              <div className='col align-self-center'>
-                <p className='label image'>{it.title}</p>
-              </div>
+            <div className={`col-3 justify-content-center bord`} key={index} style={{padding:5}}>
+                <div className='label image'>{it.title}</div>
             </div>
           </>
         );
