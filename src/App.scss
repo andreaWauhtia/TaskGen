@@ -1,25 +1,13 @@
-#root {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 .label{
   font-weight: 700 !important;
   word-break: keep-all;
   font-size: 12px;
   text-align: center;
-  padding: 11px;
   left: 0;
-  bottom: 5px;
   display: table-cell;
   vertical-align: middle;
 }
-.bord{
-  //border: 1px solid #000 !important;
-  //width: 160px  !important;
-  //height: 150px !important;
-}
+
 
 .image{
   margin-top: 5px;
@@ -35,42 +23,12 @@
   height: 1px;
   background-color: #ccc; /* Choisissez la couleur de votre ligne de séparation */
 }
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+@page {
+  size:auto;
+  margin: 4mm; /* Définissez les marges à zéro */
 }
 
 @media print{
   .pagebreak {page-break-after: always;}
   }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}

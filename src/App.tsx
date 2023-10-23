@@ -82,7 +82,7 @@ function App() {
       if (it !== undefined) {
         renderedImages.push(
           <>
-            <div className={`col-3 justify-content-center bord`} key={index} style={{padding:5}}>
+            <div className={`col-3 align-items-center bord`} key={index}>
               <img className='image' src={it.link} alt={it.title} />
             </div>
           </>
@@ -90,7 +90,7 @@ function App() {
       }
       else {
         renderedImages.push(
-        <div className={`col-3 justify-content-center bord`} key={index}></div>
+          <div className={`col-3 align-items-center bord`} key={index}></div>
         );
       }
       //<p className='label'>{it.title}</p>
@@ -101,31 +101,37 @@ function App() {
       if (it !== undefined) {
         renderedTitles.push(
           <>
-            <div className={`col-3 justify-content-center bord`} key={index} style={{padding:5}}>
-                <div className='label image'>{it.title}</div>
+            <div className={`col-3 align-items-center bord`} key={index} style={{height:'95px'}}>
+              <div className='label image'>{it.title}</div>
             </div>
           </>
         );
       }
       else {
         renderedImages.push(
-        <div className={`col-3 justify-content-center bord`} key={index}></div>
+          <div className={`col-3 align-items-center bord`} key={index}></div>
         );
       }
 
     }
   }
   return (
-    <div className='container'>
-      <div className='col-11'>
-        <div className="row pagebreak">
-          {renderedImages}
-        </div>
-        <div className="row pagebreak">
-          {renderedTitles}
+    <>
+      <div className='container pagebreak' style={{ marginTop: '20px' }}>
+        <div className='col-11 '>
+          <div className="row">
+            {renderedImages}
+          </div>
         </div>
       </div>
-    </div>
+      <div className='container pagebreak' style={{ marginTop: '25px' }}>
+        <div className='col-11 '>
+          <div className="row">
+            {renderedTitles}
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 
